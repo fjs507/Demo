@@ -6,30 +6,33 @@
 //
 
 import XCTest
+@testable import Demo
 
 final class DemoTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+    func test_Keychain_save_and_load() throws {
+        let pokemon: Pokemon = Pokemon(
+            baseExperience: 2,
+            height: 4,
+            id: 5,
+            name: "test",
+            order: 2,
+            sprites: Sprites(frontDefault: "testFrontDefault"),
+            weight: 10)
+        do {
+            let data = try JSONEncoder().encode(pokemon)
+            let status = Keychain.save(key: "TestData", data: data)
+            print("status: ", status)
+            if let receivedData = Keychain.load(key: "TestData") {
+                do {
+                    let result = try JSONDecoder().decode(Pokemon.self, from: receivedData)
+                    print("result: ", result)
+                    XCTAssertEqual(result, pokemon)
+                } catch let error {
+                    XCTFail("Error, \(error)")
+                }
+            }
+        } catch let error {
+            XCTFail("Error, \(error)")
         }
     }
-
 }
