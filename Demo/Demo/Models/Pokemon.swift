@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Pokemon: Decodable {
+struct Pokemon: Codable, Equatable {
     var baseExperience: Int
     var height: Int
     var id: Int
@@ -24,5 +24,10 @@ struct Pokemon: Decodable {
         case order
         case sprites
         case weight
+    }
+    
+    static func == (lhs: Pokemon, rhs: Pokemon) -> Bool {
+        return
+        lhs.id == rhs.id 
     }
 }

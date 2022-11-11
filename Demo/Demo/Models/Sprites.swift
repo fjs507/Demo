@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Sprites: Decodable {
+struct Sprites: Codable {
     var frontDefault: String
     
     enum CodingKeys: String, CodingKey {
