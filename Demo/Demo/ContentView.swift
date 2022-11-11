@@ -30,13 +30,16 @@ struct ContentView: View {
 
 struct ViewA: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("This is view a")
+        ZStack {
+            FloatingClouds()
+            VStack {
+                Image(systemName: "globe")
+                    .imageScale(.large)
+                    .foregroundColor(.accentColor)
+                Text("This is view a")
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
@@ -55,6 +58,14 @@ struct ViewB: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+func withOptionalAnimation<Result>(_ animation: Animation? = .default, _ body: () throws -> Result) rethrows -> Result {
+    if UIAccessibility.isReduceMotionEnabled {
+        return try body()
+    } else {
+        return try withAnimation(animation, body)
     }
 }
 
