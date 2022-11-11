@@ -8,22 +8,29 @@
 import SwiftUI
 
 struct Cloud: View {
-    @StateObject var provider = CloudProvider()
+    // MARK: State
     @State var move = false
-    let proxy: GeometryProxy
-    let color: Color
-    let rotationStart: Double
-    let duration: Double
+    @StateObject var provider = CloudProvider()
+    
+    // MARK: Constants
+    let fullRotationDegrees: Double = 360
+    let opacity: Double = 0.8
+    
+    // MARK: Properties
     let alignment: Alignment
+    let color: Color
+    let duration: Double
+    let proxy: GeometryProxy
+    let rotationStart: Double
     
     var body: some View {
         Circle()
             .fill(color)
             .frame(height: proxy.size.height /  provider.frameHeightRatio)
             .offset(provider.offset)
-            .rotationEffect(.init(degrees: move ? rotationStart : rotationStart + 360) )
+            .rotationEffect(.init(degrees: move ? rotationStart : rotationStart + fullRotationDegrees) )
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: alignment)
-            .opacity(0.8)
+            .opacity(opacity)
             .onAppear {
                 withOptionalAnimation(Animation.linear(duration: duration).repeatForever(autoreverses: false)) {
                     move.toggle()
