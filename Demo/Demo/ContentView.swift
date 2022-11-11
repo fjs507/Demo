@@ -17,7 +17,7 @@ struct ContentView: View {
                     .font(.title3)
                     .frame(height: 30)
                     .padding()
-                NavigationLink("Go to ViewA", destination: ViewB())
+                NavigationLink("Network Request", destination: PokemonView())
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationTitle("Go Back")
                     .font(.title3)
@@ -43,18 +43,6 @@ struct ViewA: View {
     }
 }
 
-struct ViewB: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("This is view b")
-        }
-        .padding()
-    }
-}
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
@@ -68,4 +56,3 @@ func withOptionalAnimation<Result>(_ animation: Animation? = .default, _ body: (
         return try withAnimation(animation, body)
     }
 }
-
