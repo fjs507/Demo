@@ -15,9 +15,8 @@ struct PokemonView: View {
         ZStack {
             FloatingClouds()
             VStack {
-                Spacer()
                 Text("Enter a Pokemon").font(.title)
-                Spacer()
+                    .frame(maxHeight: .infinity)
                 HStack {
                     Image(systemName: "magnifyingglass")
                     TextField("Enter a Pokemon", text: $pokemonName)
@@ -28,12 +27,12 @@ struct PokemonView: View {
                     roundedCornes: 6,
                     startColor: .mint,
                     textColor: .white))
-                Spacer()
+                .frame(maxHeight: .infinity)
                 PokemonButton(imageToDisplay: $imageToDisplay,
                               pokemonName: $pokemonName)
-                Spacer()
+                .frame(maxHeight: .infinity)
                 ImageOptional(image: $imageToDisplay)
-                Spacer()
+                    .frame(maxHeight: .infinity)
             }.padding()
         }.onTapGesture {
             self.hideKeyboard()
