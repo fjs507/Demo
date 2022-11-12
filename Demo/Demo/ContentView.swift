@@ -11,18 +11,10 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
+                NavigationLink("Network Request View", destination: PokemonView())
+                    .modifier(StandardNavigationLinkViewModifier())
                 NavigationLink("Go to ViewA", destination: ViewA())
-                    .navigationBarTitleDisplayMode(.inline)
-                    .navigationTitle("Go Back")
-                    .font(.title3)
-                    .frame(height: 30)
-                    .padding()
-                NavigationLink("Network Request", destination: PokemonView())
-                    .navigationBarTitleDisplayMode(.inline)
-                    .navigationTitle("Go Back")
-                    .font(.title3)
-                    .frame(height: 30)
-                    .padding()
+                    .modifier(StandardNavigationLinkViewModifier())
             }
         }
     }

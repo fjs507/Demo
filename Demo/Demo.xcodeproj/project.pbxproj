@@ -27,6 +27,7 @@
 		2ADB1EAB291EB80300586F81 /* PokemonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB1EAA291EB80300586F81 /* PokemonButton.swift */; };
 		2ADB1EAD291EB81100586F81 /* PokemonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB1EAC291EB81100586F81 /* PokemonView.swift */; };
 		2ADB1EB8291EBF7100586F81 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB1EB7291EBF7000586F81 /* Keychain.swift */; };
+		2ADB1EF329204C9D00586F81 /* StandardNavigationLinkViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB1EF229204C9D00586F81 /* StandardNavigationLinkViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		2ADB1EAA291EB80300586F81 /* PokemonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonButton.swift; sourceTree = "<group>"; };
 		2ADB1EAC291EB81100586F81 /* PokemonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonView.swift; sourceTree = "<group>"; };
 		2ADB1EB7291EBF7000586F81 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		2ADB1EF229204C9D00586F81 /* StandardNavigationLinkViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardNavigationLinkViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				2ADB1E9D291EB79300586F81 /* GradientViewModifier.swift */,
 				2ADB1EA1291EB7A800586F81 /* Pokemon.swift */,
 				2ADB1E9F291EB79F00586F81 /* Sprites.swift */,
+				2ADB1EF229204C9D00586F81 /* StandardNavigationLinkViewModifier.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				2ADB1EA2291EB7A800586F81 /* Pokemon.swift in Sources */,
 				2ADB1E9C291EB74E00586F81 /* View+.swift in Sources */,
 				2ADB1E95291E92EA00586F81 /* FloatingClouds.swift in Sources */,
+				2ADB1EF329204C9D00586F81 /* StandardNavigationLinkViewModifier.swift in Sources */,
 				2ADB1E9E291EB79300586F81 /* GradientViewModifier.swift in Sources */,
 				2ADB1EA7291EB7D900586F81 /* Image+.swift in Sources */,
 				2ADB1EB8291EBF7100586F81 /* Keychain.swift in Sources */,
