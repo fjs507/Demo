@@ -30,12 +30,18 @@ struct PokemonButton: View {
     
     func requestPokemon() {
         Task {
-            let (data, _, error) = await PokeAPI.requestPokemon(pokemonName)
+            let (data, response, error) = await PokeAPI.requestPokemon(pokemonName)
             if let error = error {
-                print("\(#line)")
-                showingAlert = true
-                print("* ERROR \(#line), \(error), \(error.localizedDescription)")
                 alertMessage = "Error with request: " + error.localizedDescription
+                showingAlert = true
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                if response.statusCode == 404 {
+                    alertMessage = "The Pokemon \(pokemonName) does not exist. \n\nPlease try something else."
+                    showingAlert = true
+                    return
+                }
             }
             if let data = data {
                 do {
@@ -43,8 +49,8 @@ struct PokemonButton: View {
                     print("* Pokemon, \(pokemon)")
                     downloadImage(from: URL(string: pokemon.sprites.frontDefault)!)
                 } catch let error {
-                    print("* ERROR \(#line), \(error), \(error.localizedDescription)")
                     alertMessage = "Error decoding pokemon: " + error.localizedDescription
+                    showingAlert = true
                 }
             }
         }
