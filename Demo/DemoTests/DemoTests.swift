@@ -37,8 +37,17 @@ final class DemoTests: XCTestCase {
         }
     }
     
-    // MARK: Math
-    func test_dot() throws {
+    // MARK: Math - Dot
+    func test_dot_unequalDimensions_throwsUnequalDimensions() throws {
+        let matrixA: [Float] = [3.0, 5.0, 7.0, 5.4]
+        let matrixB: [Float] = [2.0, 7.0, 1.3]
+                
+        XCTAssertThrowsError(try Math.dot(matrixA, matrixB)) { error in
+            XCTAssertEqual(error as! MathError, MathError.unequalDimensions)
+        }
+    }
+    
+    func test_dot_equalDimensions() throws {
         let matrixA: [Float] = [3.0, 5.0, 7.0]
         let matrixB: [Float] = [2.0, 7.0, 1.3]
         
@@ -48,7 +57,16 @@ final class DemoTests: XCTestCase {
         XCTAssertEqual(actualResult, expectedResult)
     }
     
-    func test_transpose() throws {
+    // MARK: Math - Transpose
+    func test_transpose_emptyMatrix() throws {
+        let matrix: [[Float]] = []
+        
+        XCTAssertThrowsError(try Math.transpose(matrix)) { error in
+            XCTAssertEqual(error as! MathError, MathError.emptyMatrix)
+        }
+    }
+    
+    func test_transpose_nonEmpty() throws {
         let matrix: [[Float]] = [
             [1.0, 2.0, 3.0, 10.0],
             [4.0, 5.0, 6.0, 11.0],
@@ -66,6 +84,7 @@ final class DemoTests: XCTestCase {
         XCTAssertEqual(actualResult, expectedResult)
     }
     
+    // MARK: Math - Times Scalar
     func test_multiplyByScalar() throws {
         let matrix: [[Float]] = [
             [1.0, 2.0, 3.0, 10.0],
