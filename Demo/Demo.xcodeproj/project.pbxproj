@@ -28,6 +28,7 @@
 		2ADB1EAD291EB81100586F81 /* PokemonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB1EAC291EB81100586F81 /* PokemonView.swift */; };
 		2ADB1EB8291EBF7100586F81 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB1EB7291EBF7000586F81 /* Keychain.swift */; };
 		2ADB1EF329204C9D00586F81 /* StandardNavigationLinkViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB1EF229204C9D00586F81 /* StandardNavigationLinkViewModifier.swift */; };
+		2ADB1EF529204FBE00586F81 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB1EF429204FBE00586F81 /* Math.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		2ADB1EAC291EB81100586F81 /* PokemonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonView.swift; sourceTree = "<group>"; };
 		2ADB1EB7291EBF7000586F81 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		2ADB1EF229204C9D00586F81 /* StandardNavigationLinkViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardNavigationLinkViewModifier.swift; sourceTree = "<group>"; };
+		2ADB1EF429204FBE00586F81 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 			children = (
 				2ADB1E6A291E889E00586F81 /* Assets.xcassets */,
 				2ADB1EB7291EBF7000586F81 /* Keychain.swift */,
+				2ADB1EF429204FBE00586F81 /* Math.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				2ADB1E69291E889700586F81 /* ContentView.swift in Sources */,
 				2ADB1E99291E92FC00586F81 /* CloudProvider.swift in Sources */,
 				2ADB1EA0291EB79F00586F81 /* Sprites.swift in Sources */,
+				2ADB1EF529204FBE00586F81 /* Math.swift in Sources */,
 				2ADB1EA9291EB7EB00586F81 /* ImageOptional.swift in Sources */,
 				2ADB1EAD291EB81100586F81 /* PokemonView.swift in Sources */,
 				2ADB1E97291E92F300586F81 /* Cloud.swift in Sources */,
