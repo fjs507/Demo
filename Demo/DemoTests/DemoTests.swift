@@ -58,7 +58,7 @@ final class DemoTests: XCTestCase {
     }
     
     // MARK: Math - Transpose
-    func test_transpose_emptyMatrix() throws {
+    func test_transpose_emptyMatrix_throwsEmptyMatrix() throws {
         let matrix: [[Float]] = []
         
         XCTAssertThrowsError(try Math.transpose(matrix)) { error in
